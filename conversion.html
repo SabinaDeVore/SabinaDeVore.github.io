@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <title>Assignment #1 - Conversion</title>
+    <style>
+        body { font-family: Arial; background-color: #f4f4f4; margin: 20px; }
+        h2 { background: #333; color: white; padding: 10px; }
+        .section { background: white; border: 1px solid #ccc; padding: 10px; }
+        button, input { margin: 5px; padding: 5px; }
+        a { text-decoration: none; color: #333; }
+    </style>
+</head>
+<body>
+    <a href="index.html">Back to Home</a>
+    <h2>Assignment #1 - Conversion</h2>
+    <div class="section">
+        <h3>Celsius to Fahrenheit</h3>
+        <label>Celsius:</label>
+        <input type="number" id="celsius">
+        <button onclick="toFahrenheit()">To Fahrenheit</button>
+        <p id="out1"></p>
+
+        <label>Fahrenheit:</label>
+        <input type="number" id="fahrenheit">
+        <button onclick="toCelsius()">To Celsius</button>
+        <p id="out2"></p>
+
+        <h3>Meters to Feet</h3>
+        <label>Meters:</label>
+        <input type="number" id="meters">
+        <button onclick="toFeet()">To Feet</button>
+        <p id="out3"></p>
+
+        <label>Feet:</label>
+        <input type="number" id="feet">
+        <button onclick="toMeters()">To Meters</button>
+        <p id="out4"></p>
+    </div>
+
+    <script>
+        function toFahrenheit() {
+            var c = parseFloat(document.getElementById("celsius").value);
+            var f = (c * 9/5) + 32;
+            document.getElementById("out1").innerHTML = c + "°C = " + f.toFixed(2) + "°F";
+        }
+        function toCelsius() {
+            var f = parseFloat(document.getElementById("fahrenheit").value);
+            var c = (f - 32) * 5/9;
+            document.getElementById("out2").innerHTML = f + "°F = " + c.toFixed(2) + "°C";
+        }
+        function toFeet() {
+            var m = parseFloat(document.getElementById("meters").value);
+            var ft = m * 3.28084;
+            document.getElementById("out3").innerHTML = m + " meters = " + ft.toFixed(2) + " feet";
+        }
+        function toMeters() {
+            var ft = parseFloat(document.getElementById("feet").value);
+            var m = ft / 3.28084;
+            document.getElementById("out4").innerHTML = ft + " feet = " + m.toFixed(2) + " meters";
+        }
+    </script>
+</body>
+</html>

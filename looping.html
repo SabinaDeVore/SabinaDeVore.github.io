@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <title>Looping Exercises</title>
+    <style>
+        body { font-family: Arial; background: #f4f4f4; margin: 20px; }
+        h2 { background: #333; color: white; padding: 10px; }
+        .section { background: white; border: 1px solid #ccc; padding: 10px; }
+        button, input { margin: 5px; padding: 5px; }
+        a { text-decoration: none; color: #333; }
+    </style>
+</head>
+<body>
+    <a href="index.html">Back to Home</a>
+    <h2>Looping Exercises</h2>
+    <div class="section">
+        <h3>1. Factorial (While Loop)</h3>
+        <input type="number" id="factNum" placeholder="Enter number">
+        <button onclick="computeFactorial()">Compute</button>
+        <p id="factResult"></p>
+
+        <h3>2. Sum of first n numbers (Do While Loop)</h3>
+        <input type="number" id="sumNum" placeholder="Enter number">
+        <button onclick="computeSum()">Compute</button>
+        <p id="sumResult"></p>
+
+        <h3>3. Average of first n numbers (For Loop)</h3>
+        <input type="number" id="avgNum" placeholder="Enter number">
+        <button onclick="computeAverage()">Compute</button>
+        <p id="avgResult"></p>
+    </div>
+
+    <script>
+        function computeFactorial() {
+            var n = parseInt(document.getElementById("factNum").value);
+            var i = 1, fact = 1;
+            while (i <= n) { fact *= i; i++; }
+            document.getElementById("factResult").innerHTML = "Factorial of " + n + " is " + fact;
+        }
+
+        function computeSum() {
+            var n = parseInt(document.getElementById("sumNum").value);
+            var i = 1, sum = 0;
+            do { sum += i; i++; } while (i <= n);
+            document.getElementById("sumResult").innerHTML = "Sum of first " + n + " numbers is " + sum;
+        }
+
+        function computeAverage() {
+            var n = parseInt(document.getElementById("avgNum").value);
+            var sum = 0;
+            for (var i = 1; i <= n; i++) { sum += i; }
+            var avg = sum / n;
+            document.getElementById("avgResult").innerHTML = "Average of first " + n + " numbers is " + avg;
+        }
+    </script>
+</body>
+</html>
